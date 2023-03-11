@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+    <body>
+      <div class "container" id ="resumeform">
+
+      <h1 class = "text-center my-5">Resume Generator</h1>
+      <div class="row">
+        <div class="col-md-4 mx-3">
+          <h3>Personal Details</h3>
+          <div class ="form-group">
+            <label for="nameField">Name </label>
+            <input type="text" id="nameField" placeholder = "Enter here ..." class="form-control">
+          </div>
+
+          <div class ="form-group mt-3">
+            <label for="contactField">Contact No</label>
+            <input type="text" id="contactField" placeholder = "Enter here ..." class="form-control">
+          </div>
+
+          <div class ="form-group mt-3">
+              <label for="addressField">Address  </label>
+              <textarea id="addressField" placeholder = "Enter here ..." class="form-control" row = "3"></textarea>
+            </div>
+
+          <div class ="form-group mt-3">
+              <label for="emailField">Email </label>
+              <input type="text" id="emailField" placeholder = "Enter here ..." class="form-control">
+            </div>
+
+
+            <div class ="form-group mt-3" id ="education">
+                <label for="">Education</label>
+                <textarea  placeholder = "Enter here ..." class="form-control eduField" rows="2"></textarea>
+
+                <div class="container text-center mt-3" id = "educationbutton">
+                <button onclick = "addNewEdufield()" class = "btn btn-primary btn-sm addbtn-colour" > ADD </button>
+                </div>
+                </div>
+
+        </div>
+        <div class="col-md-4 mx-2">
+          <h3>Professional Details</h3>
+          <div class ="form-group">
+              <label for="objectiveField"> Objective </label>
+              <textarea id="objectiveField" placeholder = "Enter here ..." class="form-control" rows="4"></textarea>
+            </div>
+
+            <div class ="form-group mt-3" id="exp">
+                <label for="">Experience</label>
+                <textarea  placeholder = "Enter here ..." class="form-control expField" rows="2"></textarea>
+
+                <div class="container text-center mt-3" id = "expbutton">
+                  <button onclick="addNewExpfield()" class = "btn btn-primary btn-sm addbtn-colour" > ADD </button>
+                </div>
+                </div>
+                <div class ="form-group mt-3 " id ="skill">
+                    <label for="">Skills</label>
+                    <textarea  placeholder = "Enter here ..." class="form-control skillField" rows="1"></textarea>
+                    <div class="container text-center mt-3" id ="skillbutton">
+                      <button onclick="addNewSkill()" class = "btn btn-primary btn-sm addbtn-colour"> ADD </button>
+                    </div>
+                    </div>
+        </div>
+        <div class="col-md-auto mx-2">
+          <h3>Important links</h3>
+          <div class ="form-group">
+            <label for="fbField">Facebook </label>
+            <input type="text" id="fbField" placeholder = "Enter here ..." class="form-control">
+          </div>
+          <div class ="form-group mt-3">
+            <label for="twitterField">GitHub </label>
+            <input type="text" id="twitterField" placeholder = "Enter here ..." class="form-control">
+          </div>
+          <div class ="form-group mt-3">
+            <label for="linkedinField">LinkedIn </label>
+            <input type="text" id = "linkedinField" placeholder = "Enter here ..." class="form-control">
+          </div>
+          <div class ="form-group mt-3" id="project">
+              <label for="projectField">Projects</label>
+              <textarea  placeholder = "Enter here ..." class="form-control projectField"></textarea>
+              <div class="container text-center mt-3" id = "projectbutton">
+                <button onclick="addNewproject()" class = "btn btn-primary btn-sm addbtn-colour"> ADD </button>
+              </div>
+              </div>
+        </div>
+        <div class="container text-center mt-3">
+          <button onclick="createresume()" class ="btn btn-primary btn-lg addbtn-colour" >Generate Resume </button>
+        </div>
+      </div>
+      </div>
+
+      
+<div class ="container"  id = "resumetemp" >
+  <div class ="row">
+    <div class ="col-md-4 text-center py-4 my-3" id = "left-panal">
+      <h1 style="color: white" id ="nametemp">John Wick</h1>
+         <div class="card mt-4">
+          <div class = "card-header" id = "personal-title">
+
+                   Personal Info </div>
+
+           <div class ="card-body">
+               <h4>
+                     Address
+                 </h4>
+
+                <p id ="addresstemp">
+                    Address of yours
+                  </p>
+                  <h4>Contact Info</h4>
+      <p id ="contacttemp">
+        contact no
+      </p>
+      <h4>Email</h4>
+      <p id ="emailtemp">
+        wwww.email.com
+      </p>
+
+    </div>
+
+        <div class = "card-header" id = "personal-title">
+
+         Important Links
+       </div>
+
+        <div class ="card-body">
+              <p>
+               <a id="fbtemp" href="https://www.facebook.com" target="">www.Facebook.com</a>
+                 </p>
+               <p>
+                    <a id ="linkedintemp" href="https://www.linkedin.com/in/udit-yadav-639386224/">www.linkedln.com</a>
+                 </p>
+                 <p>
+               <a id="twittertemp"href="https://github.com/udit065">www.twitter.com</a>
+             </p>
+  </div>
+        <div class = "card-header" id = "personal-title">
+
+         Skills </div>
+
+        <div class ="card-body">
+          <ul id ="skilltemp">
+            <li>
+              skill 1
+            </li>
+            <li>
+              skill 2
+            </li>
+          </ul>
+    </div>
+  </div>
+</div>
+    <div class =" col-md-8  py-4 my 3">
+
+      <div class="card mt-4">
+          <div class = "card-header" id = "Professional-title" >
+             <p style="color:white">
+               Objective
+             </p>
+         </div>
+
+          <div class ="card-body" id="objectivetemp">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+    <div class = "card-header" id = "Professional-title">
+     <p style="color:white">Education</p> </div>
+      <div class ="card-body">
+      <ul id= "educationtemp">
+        <li>
+          qualification 1
+        </li>
+        <li>
+          qualification 2
+        </li>
+      </ul>
+
+    </div>
+    <div class = "card-header" id = "Professional-title">
+<p style="color:white">
+     Experience
+   </p> </div>
+
+    <div class ="card-body">
+      <ul id = "experiencetemp">
+        <li>
+         Experience 1
+        </li>
+        <li>
+          Experience 2
+        </li>
+      </ul>
+    </div>
+    <div class = "card-header" id = "Professional-title">
+<p style="color:white">
+     Projects </p>
+   </div>
+    <div class ="card-body">
+      <ul id ="projecttemp">
+        <li>
+          project 1
+        </li>
+        <li>
+          project 2
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+  <div class ="container mt-3 text-center" id ="printbutton">
+  <button onclick ="printresume()"class="btn btn-primary btn-lg addprintbtn-colour" > Print Resume</button>
+</div>
+</div>
+</div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    </body>
+</html>
